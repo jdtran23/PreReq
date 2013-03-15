@@ -1,5 +1,8 @@
 <?php
-	session_start();
+	include("header.php"); 
+
+
+	//session_start();
 
 	if(!isset($_SESSION['user']))
 	{
@@ -10,7 +13,7 @@
 	{				
 		echo '<form action = "chpass.php" method = "post">';
 		echo 'New Password : <input name ="new_password" type="password"  maxlength="24" size="12"/><br/> ';
-		echo '<input type ="submit" name ="submit" value="Change Password"/>';
+		echo '<input type ="submit" class = "btn btn-warning" name ="submit" value="Change Password"/>';
 		echo '</form>';
 	}
 	

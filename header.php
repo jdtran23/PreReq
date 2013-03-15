@@ -52,7 +52,7 @@
               <li class="active"><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>
 			   <li><a href="skill-search.php">Skill Search</a></li>
 			  <li><a href="favorites.php">Favorites</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="chpass.php">Change Password</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
