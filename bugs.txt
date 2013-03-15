@@ -1,0 +1,6 @@
+Andre 3000 bug.
+$query = SELECT * FROM Skill WHERE url = 'http://en.wikipedia.org/wiki/André 3000' 
+When run in cPanel, returns 1 result, but in displaySkill.php, returns none.
+
+Simon & Garfukel bug.
+Somehow is interpreted as 'Simon' only. Database entry as well. Truncation does not apply to get request, however.
