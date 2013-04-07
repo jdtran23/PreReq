@@ -38,11 +38,10 @@
 			console.log(item.title);
 		
 		//Odd bug. Odd characters are not being handled properly. Simon & Garfunkel becomes Simon.
-		$.post("skill_record.php", {skillName : item.title,
+		/*$.post("skill_record.php", {skillName : item.title,
 							wikiURL : 'http://en.wikipedia.org/wiki/' + decodeURI(item.title) }, function(data){	
 			//alert("Data Loaded: " + data);
 			//This function takes the output from the php script and displays it in some fashion.
-			/*encodeURIComponent(item.title) FOR URI.*/
 			if (data.length>0){ 
 				 $("#searchterm").html(data); 
 			}
@@ -51,8 +50,8 @@
 			numResults++;
 			if(numResults==9)
 				return;
-		});
-
+		});*/
+$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
 	  });
 	});
   });
