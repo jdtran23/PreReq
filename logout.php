@@ -8,7 +8,7 @@
 	$old_user = $_SESSION['user'];
 	unset($_SESSION['user']);
 	session_destroy();\
-	Header( "Location: index.php" );
+	printf("<script>location.href='index.php'</script>");
 ?>
 <!--
 <html>

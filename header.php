@@ -1,10 +1,13 @@
+<?php 
+	session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
 	<!-- Charset -->
-	<?php header('Content-type: text/html; charset=utf-8'); ?>
+	<!-- <?php header('Content-type: text/html; charset=utf-8'); ?>-->
 	<!-- ajax library -->
 	<script src = "ajaxlib.js" type = "text/javascript"></script>
 	<!-- javascript library -->
@@ -69,8 +72,7 @@
             </ul>
 			
 			<?php 
-			session_start();
-			if(!isset($_SESSION['user']))
+             if(!isset($_SESSION['user']))
 			{
 				echo'<form action = "login.php" method = "post" class="navbar-form pull-right" >
 						<div id="navbar-login">
@@ -91,8 +93,8 @@
 					</div>
 				</form>';
 			}
-			
-			?>
+	?>
+	
 			
 			
 			

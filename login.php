@@ -33,12 +33,12 @@
 			//Yes, create session id.
 			$_SESSION['user']=$login_username;
 					
-			Header( "Location: index.php" );
+			printf("<script>location.href='index.php'</script>");
 
 		}
 		else
 		{
-			Header( "Location: login.php" );
+			printf("<script>location.href='login.php'</script>");
 		}
 		
 		$stmt->close();
