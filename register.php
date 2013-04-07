@@ -7,7 +7,57 @@
 ?>
 <html>
 <head>
-	<title>REGISTRATION</title>
+	<title>Registration</title>
+
+	<script src = "js/jquery.validate.js" type = "text/javascript"></script>
+	
+	
+	<script>
+	$(document).ready(function() {
+  $("#register-form").validate({
+    rules: {
+      name: "required",    // simple rule, converted to {required: true}
+      email: {             // compound rule
+      required: true,
+      email: true
+      },
+      password: {
+        required: true
+      },
+    },
+  });
+});
+
+</script>
+	<!--
+	<script>
+  $(document).ready(function(){
+    $.validator.addMethod("username", function(value, element) {
+        return this.optional(element) || /^[a-z0-9\_]+$/i.test(value);
+    }, "Username must contain only letters, numbers, or underscore.");
+    $("#register-form").validate();
+  });
+  </script>
+	-->
+	<!--
+	<script type="text/javascript"> 
+8	    $(document).ready(function() { 
+9	      $("#register-form").validate({ 
+10	        rules: { 
+11	          username: "required",// simple rule, converted to {required:true} 
+				password:{
+				required: true
+				},
+12	          email: {// compound rule 
+13	          required: true, 
+14	          email: true 
+15	        	}
+26	      }); 
+27	    }); 
+28	  </script> 
+	-->
+	
+	
 </head>
 <body>
 	<h1>Registration </h1>
@@ -41,11 +91,11 @@
 	if(!empty($_POST['username']))
 		print "User or email already exists!";
 		
-	echo '<form action = "register.php" method = "post">';
+	echo '<form action = "register.php" method = "post" id="register-form">';
 	echo 'Username : <input name ="username" type="text"  maxlength="12" size="12"/><br/>';
 	echo 'Password : <input name ="password" type="password"  maxlength="12" size="12"/><br/> ';
 	echo 'Email : <input name ="email" type="text"  maxlength="30" size="24"/><br/> ';
-	echo '<input type ="submit" name ="submit" value="Register"/>';
+	echo '<input type ="submit" name ="submit" value="Register" class="btn btn-primary"/>';
 	echo '</form>';
 	
 	?>
