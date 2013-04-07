@@ -7,7 +7,16 @@
 		die('Database Connection Fail'.mysql_error());
 		
 	if(isset($_GET['topic']))	
-		$topic = $_GET['topic'];
+	{
+		$topic = $_GET['topic'];		
+		$wikiURL = 'http://en.wikipedia.org/wiki/'.$topic;
+		$query = "INSERT INTO `Skill` VALUES (?,?)";
+		$stmt = $db->prepare($query);
+		$stmt->bind_param("ss", $topic, $wikiURL);
+		$result = $stmt->execute();
+		//echo "result".$result;
+		$stmt->close();
+	}
 	if(isset($_GET['newprereq']))
 		$newPrereq = $_GET['newprereq'];
 	if(isset($_GET['prereq']))

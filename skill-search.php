@@ -33,25 +33,9 @@
 	function(data) {
 	  var numResults = 0;
 	  $("#results").empty(); 
-//	  $("#results").append("<p>You Are Searching <b>" + q + "</b> </p>");+ q +
 	  $.each(data.query.search, function(i,item){
 			console.log(item.title);
-		
-		//Odd bug. Odd characters are not being handled properly. Simon & Garfunkel becomes Simon.
-		/*$.post("skill_record.php", {skillName : item.title,
-							wikiURL : 'http://en.wikipedia.org/wiki/' + decodeURI(item.title) }, function(data){	
-			//alert("Data Loaded: " + data);
-			//This function takes the output from the php script and displays it in some fashion.
-			if (data.length>0){ 
-				 $("#searchterm").html(data); 
-			}
-			console.log(data);
-			$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
-			numResults++;
-			if(numResults==9)
-				return;
-		});*/
-$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
+		$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
 	  });
 	});
   });

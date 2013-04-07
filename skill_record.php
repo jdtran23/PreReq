@@ -4,12 +4,6 @@
 	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");
 	if(mysqli_connect_errno())
 		die('Database Connection Fail'.mysql_error());
-
-	//User specific stuff.
-	//Not implemented yet
-	//session_start();
-	//echo $_SESSION['user'];
-
 	//The odd mb_convert_encoding forces a double-encoded title name into the ISO standard.
 	$skillName = mb_convert_encoding($_POST['skillName'],'ISO-8859-15','utf-8');
 	$wikiURL = mb_convert_encoding($_POST['wikiURL'],'ISO-8859-15','utf-8');
