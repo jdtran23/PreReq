@@ -1,7 +1,12 @@
 <?php include("header.php"); ?>
 
 
+<body>
 
+
+
+<h1>Favorites</h1>
+</body>
 
 <?php 
 //We'll be using the database for bringing in new skills, etc.
@@ -10,8 +15,7 @@
 		die('Database Connection Fail'.mysql_error());
 	if(!isset($_SESSION['user']))
 	{
-		printf("<script>location.href='login.php'</script>");
-		
+		Header( "Location: login.php" );
 	}
 	else
 	{
@@ -26,7 +30,3 @@
 		}
 	}
 ?>
-
-<body>
-	<h1>Favorites</h1>
-</body>

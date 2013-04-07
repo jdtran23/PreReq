@@ -35,7 +35,7 @@
 	  $("#results").empty(); 
 	  $.each(data.query.search, function(i,item){
 			console.log(item.title);
-		$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
+		$("#results").append("<div>"+"<a href='displaySkill.php?topic="+item.title.replace('&','%26')+"&newprereq=0&prereq='''>Learn it!</a>" + item.title + "</a><br>" + item.snippet +"</div>"); 
 	  });
 	});
   });
