@@ -6,7 +6,7 @@
 	session_start();
 	if(!isset($_SESSION['user']))
 	{
-		navbar( "Location: login.php" );
+		printf("<script>location.href='login.php'</script>");
 	}
 	else
 	{
@@ -14,6 +14,6 @@
 		$user = $_SESSION['user'];
 		$query = "DELETE FROM Favorites WHERE user_name = '".$user."' AND skill_title='".$del."'";
 		$result = $db->query($query);
-		navbar( "Location: favorites.php" );
+		printf("<script>location.href='favorites.php'</script>");
 	}
 ?>

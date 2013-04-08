@@ -19,5 +19,5 @@
 			$query = "INSERT INTO `Favorites`(`user_name`, `skill_title`) VALUES ('".$user."','".$topic."')";
 			$result = $db->query($query);
 		}
-	navbar( "Location: favorites.php" );
+	printf("<script>location.href='favorites.php'</script>");
 ?>

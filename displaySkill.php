@@ -1,7 +1,7 @@
 <?php
 	include("navbar.php");
 	 <script>$("#nav-search").addClass("active");</script>
-	navbar('Content-type: text/html; charset=utf-8');
+	Header('Content-type: text/html; charset=utf-8');
 	
 	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");  
 	if(mysqli_connect_errno())
