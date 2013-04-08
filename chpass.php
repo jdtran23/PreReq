@@ -1,6 +1,8 @@
-<?php
-	include("header.php"); 
+<?php include("navbar.php"); ?>
+	
+<script>$("#nav-chpass").addClass("active");</script>
 
+<?php
 
 	//session_start();
 

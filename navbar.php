@@ -10,6 +10,7 @@
 	<!-- javascript library -->
 	<script src = "javascriptlib.js" type = "text/javascript"></script>
 	<script src = "js/prereq.js" type = "text/javascript"></script>
+	<script src = "js/jquery-1.9.1.js" type = "text/javascript"></script>
     <title>PreReq</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -36,7 +37,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../prereq/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../prereq/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../prereq/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../prereq/img/prereq.ico">
+                                
   
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -49,11 +50,11 @@
           <a class="brand" href="index.php">PreReq</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>
-			   <li><a href="skill-search.php">Skill Search</a></li>
-			  <li><a href="favorites.php">Favorites</a></li>
-              <li><a href="chpass.php">Change Password</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li id="nav-home"><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>
+			   <li id="nav-search"><a href="skill-search.php">Skill Search</a></li>
+			  <li id="nav-favorites"><a href="favorites.php">Favorites</a></li>
+              <li id="nav-chpass"><a href="chpass.php">Change Password</a></li>
+              <li id="nav-contact"><a href="#contact">Contact</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">

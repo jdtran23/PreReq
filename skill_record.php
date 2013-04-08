@@ -1,5 +1,5 @@
 <?php
-	include("header.php");
+	include("navbar.php");
 	//We'll be using the database for bringing in new skills, etc.
 	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");
 	if(mysqli_connect_errno())

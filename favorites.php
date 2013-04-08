@@ -1,9 +1,7 @@
-<?php include("header.php"); ?>
-
+<?php include("navbar.php"); ?>
+<script>$("#nav-favorites").addClass("active");</script>
 
 <body>
-
-
 
 <h1>Favorites</h1>
 </body>
@@ -15,7 +13,7 @@
 		die('Database Connection Fail'.mysql_error());
 	if(!isset($_SESSION['user']))
 	{
-		Header( "Location: login.php" );
+		printf("<script>location.href='login.php'</script>");
 	}
 	else
 	{

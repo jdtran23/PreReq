@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("navbar.php"); ?>
 
 <?php
 	if(!isset($_POST['username']) || !isset($_POST['password']))
@@ -33,12 +33,12 @@
 			//Yes, create session id.
 			$_SESSION['user']=$login_username;
 					
-			Header( "Location: index.php" );
+			navbar( "Location: index.php" );
 
 		}
 		else
 		{
-			Header( "Location: login.php" );
+			navbar( "Location: login.php" );
 		}
 		
 		$stmt->close();

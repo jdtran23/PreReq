@@ -1,4 +1,5 @@
-<?php include("header.php"); ?>
+<?php include("navbar.php"); ?>
+<script>$("#nav-search").addClass("active");</script>
 
 <body onLoad="document.forms.searchform.typehere.focus()">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

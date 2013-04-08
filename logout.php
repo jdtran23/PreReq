@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("navbar.php"); ?>
 
 
 <?php
@@ -8,7 +8,7 @@
 	$old_user = $_SESSION['user'];
 	unset($_SESSION['user']);
 	session_destroy();\
-	Header( "Location: index.php" );
+	navbar( "Location: index.php" );
 ?>
 <!--
 <html>

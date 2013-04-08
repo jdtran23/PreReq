@@ -1,6 +1,6 @@
 <?php
 
-	include("header.php"); 
+	include("navbar.php"); 
 
 
 		//session_start();
@@ -19,5 +19,5 @@
 			$query = "INSERT INTO `Favorites`(`user_name`, `skill_title`) VALUES ('".$user."','".$topic."')";
 			$result = $db->query($query);
 		}
-	Header( "Location: favorites.php" );
+	navbar( "Location: favorites.php" );
 ?>

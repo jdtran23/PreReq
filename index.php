@@ -1,4 +1,5 @@
-<?php include("header.php"); ?>
+<?php include("navbar.php"); ?>
+	 <script>$("#nav-home").addClass("active");</script>
 
   <body>
     <div class="container">

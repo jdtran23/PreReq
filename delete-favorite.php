@@ -6,7 +6,7 @@
 	session_start();
 	if(!isset($_SESSION['user']))
 	{
-		Header( "Location: login.php" );
+		navbar( "Location: login.php" );
 	}
 	else
 	{
@@ -14,6 +14,6 @@
 		$user = $_SESSION['user'];
 		$query = "DELETE FROM Favorites WHERE user_name = '".$user."' AND skill_title='".$del."'";
 		$result = $db->query($query);
-		Header( "Location: favorites.php" );
+		navbar( "Location: favorites.php" );
 	}
 ?>
