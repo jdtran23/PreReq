@@ -1,4 +1,4 @@
-PreReq CS 411 Project
+PreReq CS 411 Project. README.TXT
 
 Emily Tran etran5@illinois.edu
 Joseph Tran jdtran2@illinois.edu
