@@ -1,6 +1,5 @@
 <?php
 /* Simple library for getting suggestions from wikipedia.
- * Search queries should be formatted (' ' -> '%20')
  * 
  * wikiExists($topic)
  * 		Used to verify whether wikipedia page exists or not.
@@ -15,18 +14,25 @@
 //Return 1 if topic page exists.
 //Return 0 if page not found (404).
 function wikiExists($topic){
+		$topic=rawurlencode($topic);
 		$url = "http://en.wikipedia.org/wiki/".$topic;
 		if(@file_get_html($url))
 			return 1;
 		return 0;
 }	
 
-//$suggestRank denotes which Wikipedia suggestions we are reading.
+//Only bother doing ranking if our exact page does not exist.
+//$suggestRank denotes which Wikipedia suggestion we are reading.
 function wikiSuggest($term, $suggestRank){
+		
+		//Our exact page exists
+		if(wikiExists($term))
+			return $term;
+			
+		$term = rawurlencode($term);
 		$viewedResults=0;
 		$url = "http://en.wikipedia.org/w/index.php?search=".$term;
 		$html = file_get_html($url);
-
 		foreach($html->find('div') as $element)
         {
 				//We prioritize Wikipedia's suggestions. Always be rank 1.
@@ -41,20 +47,19 @@ function wikiSuggest($term, $suggestRank){
 				}
         }	
         
-        //Page either exists, or page does not exist but we did not find a suggestion.
-        //Use wikiExists to verify existence of Wikipedia page.
+        //Did not find our query.
         return 0;
 }
 
 //Some simple tests.
 function wikiTest(){
-	$a=assert(0==wikiSuggest("Le%20Marin",1));
-	$b=assert(0==wikiExists("Le%20Marhfhasin"));
-	$c=assert(1==wikiExists("Le%20Marin"));
+	$a=assert(0==wikiSuggest("Le Marin",1));
+	$b=assert(0==wikiExists("Le Marhfhasin"));
+	$c=assert(1==wikiExists("Le Marin"));
 	if($a && $b && $c)
 		return 1;
 	return 0;
 }
 
-//print(wikiTest());
+print(wikiTest());
 ?>
