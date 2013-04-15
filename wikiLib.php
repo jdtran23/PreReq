@@ -61,5 +61,5 @@ function wikiTest(){
 	return 0;
 }
 
-print(wikiTest());
+//print(wikiTest());
 ?>
