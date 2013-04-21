@@ -1,0 +1,10 @@
+DisplaySkill
+	Disable favorite button for non logged in users
+	
+Registration
+
+Sanitize Query
+	
+Hash passwords
+
+Change all $view_name variables to private

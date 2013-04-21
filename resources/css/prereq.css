@@ -1,0 +1,44 @@
+.form-search{
+	padding:10px;
+}
+
+.hidden
+{	
+	display:none; 
+}
+
+.visible
+{
+	display:inline-block;
+}
+
+.favorite-item
+{
+	/*font-size: 18px;*/
+	margin: 10px;
+}
+
+.prereq-item
+{
+	/*font-size: 18px;*/
+	margin-right: 10px;
+}
+
+
+#loggedintext{
+	color: white;
+}
+
+label.valid {
+  width: 24px;
+  height: 24px;
+  background: url(../img/valid.png) center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+}
+label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
