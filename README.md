@@ -1,4 +1,0 @@
-Prereq
-======
-
-Learning tool!

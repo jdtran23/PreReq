@@ -11,6 +11,11 @@ class Database_Model
 		if(mysqli_connect_errno())
 			die("Database connection failed.".mysql_error());
 	}
+
+	public function sanitize($string)
+	{
+		return $this->db->real_escape_string($string);
+	}
 	
 	public function plainQuery($query)
 	{

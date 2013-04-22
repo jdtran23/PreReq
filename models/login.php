@@ -14,6 +14,8 @@ class Login_Model{
 
 	public function loginUser($user, $pass)
 	{
+		$pass = $this->db_conn->sanitize($pass);
+		$user = $this->db_conn->sanitize($user);
 		$query = "SELECT * FROM Users WHERE user_name = '".$user."' AND password = '".$pass."'";
 		$result = $this->db_conn->plainQuery($query);
 		if($result->num_rows == 1)

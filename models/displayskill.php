@@ -17,6 +17,8 @@ class Displayskill_Model
 
 	public function addSuperSubskill($super, $sub)
 	{
+		$super = $this->db_conn->sanitize($super);
+		$sub = $this->db_conn->sanitize($sub);
 		$super_url = 'http://en.wikipedia.org/wiki/'.$super;
 		$sub_url = 'http://en.wikipedia.org/wiki/'.$sub;
 		//Super skill, url, subskill, url, upvotes, downvotes
@@ -25,7 +27,8 @@ class Displayskill_Model
 	}
 	
 	public function findURL($skill)
-	{
+	{	
+		$skill = $this->db_conn->sanitize($skill);
 		$wikiURL = 'http://en.wikipedia.org/wiki/'.$skill;
 		$query = 'SELECT * FROM Skill WHERE url = "'.$wikiURL.'"';
 		return $this->db_conn->plainQuery($query);
@@ -33,6 +36,7 @@ class Displayskill_Model
 
 	public function getPrereqs($skill)
 	{
+		$skill = $this->db_conn->sanitize($skill);
 		$wikiURL = 'http://en.wikipedia.org/wiki/'.$skill;
 		$query = 'SELECT * FROM Super_Sub_Skill WHERE super_url = "'.$wikiURL.'"';
 		return $this->db_conn->plainQuery($query);
@@ -40,6 +44,7 @@ class Displayskill_Model
 
 	public function addSkill($skill)
 	{
+		$skill = $this->db_conn->sanitize($skill);
 		$wikiURL = 'http://en.wikipedia.org/wiki/'.$skill;
 		$query = 'INSERT INTO Skill VALUES ("'.$skill.'","'.$wikiURL.'")';
 		$result = $this->db_conn->plainQuery($query);

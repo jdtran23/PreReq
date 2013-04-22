@@ -18,7 +18,7 @@ class Login_Controller
 			{
 				$login_username = trim($_POST['username']).'';
 				$login_password = trim($_POST['password']).'';
-			
+				$login_password = hash("sha256", (urlencode($login_password)));
 				$result = $login_model->loginUser($login_username, $login_password);	
 				//Was user found?
 				if($result)	

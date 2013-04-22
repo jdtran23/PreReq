@@ -77,7 +77,7 @@
 			{
 				echo'<form action = "index.php?login" method = "post" class="navbar-form pull-right" >
 						<div id="navbar-login">
-					  <input name="username" class="span2" type="text" placeholder="Email">
+					  <input name="username" class="span2" type="text" placeholder="Username">
 					  <input name="password"class="span2" type="password" placeholder="Password">
 					  <button class="btn" type="submit">Log In</button>
 						</div>
