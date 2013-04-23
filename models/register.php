@@ -15,10 +15,10 @@ class Register_Model
 	public function addUser($username, $password, $email)
 	{
 		$username = $this->db_conn->sanitize($username);
-		$password = $this->db_conn->sanitize($password);
 		$email =$this->db_conn->sanitize($email);
+		$password = $this->db_conn->sanitize($password);
 		$password = hash("sha256", $password);
-		$query = "INSERT INTO Users VALUES ('".$username."','".$password."','".$email."')";
+		$query = "INSERT INTO User VALUES ('".$username."','".$email."','".$password."')";
 		return $this->db_conn->plainQuery($query);
 	}
 

@@ -6,34 +6,36 @@ $topic = rawurldecode($data['topic']);
 <div class="row">
 		<br>
 			
-
+	<?php echo '<span id = "topic" style="display:none;">'.$topic.'</span>'; ?>
 
 	<div class="span2"></div>
 	
 	<div class="span7">
 		<br>
-			
-			<?php echo '<span id = "topic" style="display:none;">'.$topic.'</span>'; ?>
+
 			<h3>You are now learning the fine art of:<br> <a href="#"><?php echo $topic; ?> <button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>
 			<i id = "favorite-button" ><i class='icon-star'>
 			</i> Favorite</a></button>
-			
+			</a></h3><span>
+
 			<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button class="btn btn-fav pull-right" > 
 			<i id = "visual-button" ><i class = 'icon-star'>
 			</i> Visualize</button></a>
 			
-			</a></h3><span>
+
 			
 			<div class="wiki-preview btn">
+
+
 		
 		HTML
-			
-HyperText Markup Language (HTML) is the main markup language for creating web pages and other information that can be displayed in a web browser.
-HTML is written in the form of HTML elements consisting of tags enclosed in angle brackets, within the web page content. HTML tags most commonly come in pairs like h1, although some tags, known as empty elements, are unpaired, for example <img>. The first tag in a pair is the start tag, the second tag is the end tag (they are also called opening tags and closing tags). In between these tags web designers can add text, tags, comments and other types of text-based content.
-The purpose of a web browser is to read HTML documents and compose them into visible or audible web pages. The browser does not display the HTML tags, but uses the tags to interpret the content of the page.
-HTML elements form the building blocks of all websites. HTML allows images and objects to be embedded and can be used to create interactive forms. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. It can embed scripts written in languages such as JavaScript which affect the behavior of HTML web pages.
-Web browsers can also refer to Cascading Style Sheets (CSS) to define the appearance and layout of text and other material. The W3C, maintainer of both the HTML and the CSS standards, encourages the use of CSS over explicit presentational HTML markup.[1]
-		
+				
+		HyperText Markup Language (HTML) is the main markup language for creating web pages and other information that can be displayed in a web browser.
+		HTML is written in the form of HTML elements consisting of tags enclosed in angle brackets, within the web page content. HTML tags most commonly come in pairs like h1, although some tags, known as empty elements, are unpaired, for example <img>. The first tag in a pair is the start tag, the second tag is the end tag (they are also called opening tags and closing tags). In between these tags web designers can add text, tags, comments and other types of text-based content.
+		The purpose of a web browser is to read HTML documents and compose them into visible or audible web pages. The browser does not display the HTML tags, but uses the tags to interpret the content of the page.
+		HTML elements form the building blocks of all websites. HTML allows images and objects to be embedded and can be used to create interactive forms. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. It can embed scripts written in languages such as JavaScript which affect the behavior of HTML web pages.
+		Web browsers can also refer to Cascading Style Sheets (CSS) to define the appearance and layout of text and other material. The W3C, maintainer of both the HTML and the CSS standards, encourages the use of CSS over explicit presentational HTML markup.[1]
+				
 		</div>
 		<!--<iframe src="http://en.wikipedia.org/wiki/Ashton_Kutcher"></iframe>-->
 		<?php
@@ -67,12 +69,12 @@ Web browsers can also refer to Cascading Style Sheets (CSS) to define the appear
 				{
 				  while($row = mysqli_fetch_array($result))
 				  {
-					  echo "<t><span class='prereq-item'><i class='icon-arrow-right'></i>&nbsp;<a href='index.php?displaySkill&topic=".$row[2]."&newprereq=0&prereq=''>".$row[2]."
+					  echo "<t><span class='prereq-item'><i class='icon-arrow-right'></i>&nbsp;<a href='index.php?displaySkill&topic=".$row[1]."&newprereq=0&prereq=''>".$row[1]."
 					  </a></span>
 					<i class='icon-thumbs-up'> 
-					  </i><strong>" . " " . $row[4] . " <a href='upvote-btn'></strong><font color='green'>Upvotes" . " " . "</font></a>
+					  </i><strong>" . " " . 1 . " <a href='upvote-btn'></strong><font color='green'>Upvotes" . " " . "</font></a>
 					  <i class='icon-thumbs-down'>
-					  </i><strong>" . " " . $row[5] . " <a href href='downvote-btn'></strong><font color='red'>Downvotes</font></a>";//." URL: ".$row 
+					  </i><strong>" . " " . 1 . " <a href href='downvote-btn'></strong><font color='red'>Downvotes</font></a>";//." URL: ".$row 
 					  echo "<t><br/>"; 
 				  }
 				}
@@ -121,8 +123,8 @@ Web browsers can also refer to Cascading Style Sheets (CSS) to define the appear
   });
   });
   
-  var topic = document.getElementById("topic").textContent;
-  console.log(topic);
+  		var topic = document.getElementById("topic").textContent;
+		console.log(topic);
 </script>
 
 

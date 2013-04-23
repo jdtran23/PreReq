@@ -23,7 +23,7 @@
         <div class="span4">
           <h2>New Skill</h2>
           <p>Search for a new skill and its prerequisites. </p>
-          <p><a class="btn" href="index.php?Skillsearch">Start searching &raquo;</a></p>
+          <p><a class="btn" href="index.php?skill-search">Start searching &raquo;</a></p>
         </div>
         <div class="span4">
           <h2>Favorites</h2>

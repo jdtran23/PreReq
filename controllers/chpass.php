@@ -19,12 +19,20 @@ class Chpass_Controller
 		}
 		else
 		{				
-			echo '<form action = "index.php?chpass" method = "post">';
-			echo 'New Password : <input name ="new_password" type="password"  maxlength="24" size="12"/><br/> ';
-			echo 'Confirm Pass : <input name ="pass_confirm" type="password"  maxlength="24" size="12"/><br/> ';
-			echo 'Old Password : <input name ="old_password" type="password"  maxlength="24" size="12"/><br/> ';
-			echo '<input type ="submit" class = "btn btn-warning" name ="submit" value="Change Password"/>';
-			echo '</form>';
+			echo '
+			<div class="row">
+				<div class="span6"></div>
+				<div class="span4">
+					<form action = "index.php?chpass" method = "post">
+					New Password : <input name ="new_password" type="password"  maxlength="12" size="12"/><br/> 
+					Confirm Password : <input name ="pass_confirm" type="password" minlength = "6"  maxlength="12" size="12"/><br/> 
+					Old Password : <input name ="old_password" type="password"  minlength = "6" maxlength="12" size="12"/><br/> 
+					<input type ="submit" class = "btn btn-warning" name ="submit" value="Change Password"/>
+					</form>
+				</div>
+			</div>
+				
+				';
 		}	
 		$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");  //Arbitrary selected credentials.
 		if(mysqli_connect_errno())
@@ -40,12 +48,12 @@ class Chpass_Controller
 				die("The passwords do not match");
 			$old_pass = hash("sha256",$db->real_escape_string($_POST['old_password']) );
 			$user = $db->real_escape_string($_SESSION['user']);
-			$query = "SELECT * FROM Users WHERE user_name = '".$user."' AND password = '".$old_pass."'";	
+			$query = "SELECT * FROM User WHERE username = '".$user."' AND password = '".$old_pass."'";	
 			$result = $db->query($query);
 			if(1 == $result->num_rows)
 			{
 				$new_pass = hash("sha256", trim($_POST['new_password']));
-				$query = "UPDATE Users SET password='".$new_pass."' WHERE user_name = '".$_SESSION['user']."'";
+				$query = "UPDATE User SET password='".$new_pass."' WHERE username = '".$_SESSION['user']."'";
 				$result = $db->query($query);
 				//echo $result;
 				if(1==$result)

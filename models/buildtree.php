@@ -2,7 +2,7 @@
     $arg = $_POST['arg'];                                                                                                                  
 
 	$array;
-	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");
+	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_user", "prereq", "prereq_final");
 
 	function dfs($skill, $depth) {
 		 
@@ -12,7 +12,7 @@
 		if(mysqli_connect_errno())
 			die('Database Connection Fail'.mysql_error());
 			
-		$query = "SELECT sub_name FROM Super_Sub_Skill WHERE super_name = '".$skill."'";
+		$query = "SELECT skill_name2 FROM SuperSubSkill WHERE skill_name1 = '".$skill."'";
 		$result = $db->query($query);
 		
 		$valueArray = array();

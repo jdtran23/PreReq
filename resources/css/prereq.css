@@ -42,3 +42,8 @@ label.error {
   padding: 2px 8px;
   margin-top: 2px;
 }
+
+#register-btn
+{
+	margin-left: 6px;
+}
