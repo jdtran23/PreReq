@@ -12,10 +12,16 @@ $topic = rawurldecode($data['topic']);
 	
 	<div class="span7">
 		<br>
-
+			
+			<?php echo '<span id = "topic" style="display:none;">'.$topic.'</span>'; ?>
 			<h3>You are now learning the fine art of:<br> <a href="#"><?php echo $topic; ?> <button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>
 			<i id = "favorite-button" ><i class='icon-star'>
 			</i> Favorite</a></button>
+			
+			<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button class="btn btn-fav pull-right" > 
+			<i id = "visual-button" ><i class = 'icon-star'>
+			</i> Visualize</button></a>
+			
 			</a></h3><span>
 			
 			<div class="wiki-preview btn">
@@ -114,6 +120,9 @@ Web browsers can also refer to Cascading Style Sheets (CSS) to define the appear
     });
   });
   });
+  
+  var topic = document.getElementById("topic").textContent;
+  console.log(topic);
 </script>
 
 

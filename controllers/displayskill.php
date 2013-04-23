@@ -1,7 +1,7 @@
 <?php
 class Displayskill_Controller
 {
-	public $view_name = 'displayskill';
+	private $view_name = 'displayskill';
 	
 	public function main(array $get_variables)
 	{

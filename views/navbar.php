@@ -6,9 +6,9 @@
 	<!-- Charset -->
 	<?php header('Content-type: text/html; charset=utf-8'); ?>
 	<!-- ajax library -->
-	<script src = "resources/ajaxlib.js" type = "text/javascript"></script>
+	<!--<script src = "resources/ajaxlib.js" type = "text/javascript"></script>-->
 	<!-- javascript library -->
-	<script src = "resources/javascriptlib.js" type = "text/javascript"></script>
+	<!--<script src = "resources/javascriptlib.js" type = "text/javascript"></script>-->
 	<script src = "resources/js/prereq.js" type = "text/javascript"></script>
 	<script src = "resources/js/jquery-1.9.1.js" type = "text/javascript"></script>
     <title>PreReq</title>
