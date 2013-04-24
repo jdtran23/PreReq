@@ -2,6 +2,7 @@
 
 class Database_Model
 {
+	private $debug = False;
 	private $db;
 	//Database name is prereq_final, username is prereq_user, password is prereq
 	public function __construct()
@@ -21,7 +22,10 @@ class Database_Model
 	{
 		if(!isset($this->db))
 			return NULL;
-		return $this->db->query($query);
+		$result = $this->db->query($query);
+		if($this->debug)
+			print_r($this->db->error);
+		return $result;	
 	}
 
 }

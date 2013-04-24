@@ -9,9 +9,8 @@
 	<!--<script src = "resources/ajaxlib.js" type = "text/javascript"></script>-->
 	<!-- javascript library -->
 	<!--<script src = "resources/javascriptlib.js" type = "text/javascript"></script>-->
-	<!--<script src = "resources/js/prereq.js" type = "text/javascript"></script>-->
+	<script src = "resources/js/prereq.js" type = "text/javascript"></script>
 	<script src = "resources/js/jquery-1.9.1.js" type = "text/javascript"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <title>PreReq</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">

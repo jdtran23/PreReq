@@ -15,6 +15,37 @@ class Displayskill_Model
 
 	}
 
+	//returns -1 if no user logged in, session is destroyed(no user logged in), or empty topic is passed in
+	public function upvote($super, $sub)
+	{
+		//Sanitizing may cause trouble for pages with special chars.
+		$super = $this->db_conn->sanitize($super);
+		$sub = $this->db_conn->sanitize($sub);
+		if(empty($super) || empty($sub) || 2!=session_status() || !isset($_SESSION['user']) )
+			return -1;	
+		$query = 'INSERT INTO Upvotes VALUES ("'.$super.'","'.$sub.'","'.$_SESSION['user'].'")';
+		$result = $this->db_conn->plainQuery($query);
+		if(is_object($result))
+			return 1;
+		/* Query failed */
+		return 0;
+	}
+
+	public function downvote($super, $sub)
+	{
+		//Sanitizing may cause trouble for pages with special chars.
+		$super = $this->db_conn->sanitize($super);
+		$sub = $this->db_conn->sanitize($sub);
+		if(empty($super) || empty($sub) || 2!=session_status() || !isset($_SESSION['user']) )
+			return -1;	
+		$query = 'INSERT INTO Downvotes VALUES ("'.$super.'","'.$sub.'","'.$_SESSION['user'].'")';
+		$result = $this->db_conn->plainQuery($query);
+		if(is_object($result))
+			return 1;
+		/* Query failed */
+		return 0;
+	}
+
 	public function addSuperSubskill($super, $sub)
 	{
 		$super = $this->db_conn->sanitize($super);
@@ -56,24 +87,28 @@ class Displayskill_Model
 		return false;
 	}
 	
-	public function getUpvoteCount($skill)
+	public function getUpvoteCount($superskill, $subskill)
 	{
-		$skill = $this->db_conn->sanitize($skill);
-		$query = 'SELECT COUNT(username) FROM Upvotes WHERE skill_name = "'.$skill.'"';
+		$subskill = $this->db_conn->sanitize($subskill);
+		$superskill = $this->db_conn->sanitize($superskill);
+		$query = 'SELECT COUNT(username) FROM Upvotes WHERE skill_name1 = "'.$superskill.'" AND skill_name2 ="'.$subskill.'"';
 		$result = $this->db_conn->plainQuery($query);
+		$num = $result->fetch_row()[0];
 		if(is_object($result))
-			return true;
+			return $num;
 		/* Query failed */
 		return false;
 	}
 	
-	public function getDownvoteCount($skill)
+	public function getDownvoteCount($superskill, $subskill)
 	{
-		$skill = $this->db_conn->sanitize($skill);
-		$query = 'SELECT COUNT(username) FROM Downvotes WHERE skill_name = "'.$skill.'"';
+		$subskill = $this->db_conn->sanitize($subskill);
+		$superskill = $this->db_conn->sanitize($superskill);
+		$query = 'SELECT COUNT(username) FROM Downvotes WHERE skill_name1 = "'.$superskill.'" AND skill_name2 ="'.$subskill.'"';
 		$result = $this->db_conn->plainQuery($query);
+		$num = $result->fetch_row()[0];
 		if(is_object($result))
-			return true;
+			return $num;
 		/* Query failed */
 		return false;
 	}
