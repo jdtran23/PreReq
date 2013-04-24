@@ -1,5 +1,4 @@
 <?php
-include_once(SERVER_ROOT."/resources/wikiLib.php");
 class Displayskill_Controller
 {
 	public $view_name = 'displayskill';
@@ -18,7 +17,7 @@ class Displayskill_Controller
 			$result = $displayskill_model->addSkill($topic);
 		}
 		else
-			exit();		
+			exit();
 
 		if(isset($get_variables['fav']) && isset($_SESSION['user']))
 		{
@@ -32,13 +31,6 @@ class Displayskill_Controller
 			$displayskill_model->addSkill($prereq);
 			if(isset($get_variables['newprereq']) && 1 == $get_variables['newprereq'])
 				$displayskill_model->addSuperSubskill($topic, $prereq);
-			
-			if(isset($get_variables['down']) && isset($_SESSION['user']))
-				$displayskill_model->downvote($topic , $prereq);
-
-			if(isset($get_variables['up']) && isset($_SESSION['user']))
-				$displayskill_model->upvote($topic, $prereq);
-
 		}
 
 		//Do a confirmation that the topic we want to view exists in our database.
@@ -47,7 +39,6 @@ class Displayskill_Controller
 		{
 			$view_model = new View_Model($this->view_name);
 			$view_model->assign('topic', $topic);
-			$view_model->assign('snippet', grabSnippet($topic));
 			$view_model->assign('results_obj', $displayskill_model->getPrereqs($topic));
 			if(isset($add_favorites_flag))
 				$view_model->assign('add_fav_flag', $add_favorites_flag);
