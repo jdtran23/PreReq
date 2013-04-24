@@ -3,7 +3,11 @@
 
 	$array;
 	$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_user", "prereq", "prereq_final");
-
+	$skill = "Love";
+	$query = "SELECT skill_name2 FROM SuperSubSkill WHERE skill_name1 = '".$skill."'";
+	$result = $db->query($query);
+	echo $result;
+/**
 	function dfs($skill, $depth) {
 		 
 		global $array;
@@ -14,6 +18,7 @@
 			
 		$query = "SELECT skill_name2 FROM SuperSubSkill WHERE skill_name1 = '".$skill."'";
 		$result = $db->query($query);
+		//echo $result;
 		
 		$valueArray = array();
 		
@@ -33,4 +38,5 @@
 	}
 	dfs($arg, 0);
 	echo json_encode(array('Array' => $array));
+	*/
 ?>

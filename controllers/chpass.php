@@ -34,7 +34,7 @@ class Chpass_Controller
 				
 				';
 		}	
-		$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_guest", "guest", "prereq_Wikipedia_Pages");  //Arbitrary selected credentials.
+		$db = new mysqli("engr-cpanel-mysql.engr.illinois.edu", "prereq_user", "prereq", "prereq_final");  //Arbitrary selected credentials.
 		if(mysqli_connect_errno())
 			die('Database Connection Fail'.mysql_error());
 
