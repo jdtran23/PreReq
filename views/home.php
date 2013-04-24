@@ -18,24 +18,6 @@
 	?>
       </div>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>New Skill</h2>
-          <p>Search for a new skill and its prerequisites. </p>
-          <p><a class="btn" href="index.php?skill-search">Start searching &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Favorites</h2>
-          <p>See your bookmarked skills </p>
-          <p><a class="btn" href="index.php?favorites">View Favorites &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Visualize</h2>
-          <p>View a map of related skills!</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
 
       <hr>
 

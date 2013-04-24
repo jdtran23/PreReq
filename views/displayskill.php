@@ -14,7 +14,7 @@ if(isset($data['results_obj']))
 	  	{
 			$numDown = $display2_model->getDownvoteCount($topic, $row[1]);		
 			$numUp = $display2_model->getUpvoteCount($topic, $row[1]);
-			if($numUp>= 5)
+			if($numUp>= 2)
 				array_push($prereq_array, $row[1]);
 			else
 				array_push($suggest_array, $row[1]);
@@ -34,15 +34,19 @@ if(isset($data['results_obj']))
 	<div class="span7">
 		<br>
 
-			<h3>You are now learning the fine art of:<br> <a href="#"><?php echo $topic; ?> <button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>
-			<i id = "favorite-button" ><i class='icon-star'>
-			</i> Favorite</a></button>
-			</a></h3><span>
+			<h3>You are now learning the fine art of:<br> 
+	
 
-			<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button class="btn btn-fav pull-right" > 
-			<i id = "visual-button" ><i class = 'icon-star'>
+			<div id="display-btns">
+			<a href="#"><?php echo $topic; ?> <button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>		</h3>
+	
+			<i id =  ><i class='icon-star-empty'>
+			</i> Favorite</a></button>
+			</a>
+			<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button id = "visual-button" class="btn btn-fav pull-right" > 
+			<i  ><i class = 'icon-th'>
 			</i> Visualize</button></a>
-			
+			</div>
 
 			
 			<div class="wiki-preview btn">		
@@ -51,7 +55,7 @@ if(isset($data['results_obj']))
 		?>
 				
 					
-		</div>
+			</div>
 		<!--<iframe src="http://en.wikipedia.org/wiki/Ashton_Kutcher"></iframe>-->
 		<?php
 			//"<iframe width='700' height='700' src='http://www.en.wikipedia.org/wiki/". $topic ."'></iframe>"
@@ -116,7 +120,7 @@ if(isset($data['results_obj']))
 			}
 		}
 			 else
-			  echo "<br><div class='alert alert-info'><strong>Wait! </strong>There are currently no prereqs. Add some!</div>";
+			  echo "<br><div class='alert alert-info'>There are currently no suggested skills.</div>";
 		?>
 
 		</br>
@@ -127,13 +131,14 @@ if(isset($data['results_obj']))
 		</form> 
 			
 		<div id="results"></div>	
-		
+			<!--
 		<h5>Learning Resources</h5>
 		<form action="/html/codes/html-comment-box-code-action.cfm" method="get">
 
 		<textarea rows="4" cols="100"  placeholder="Share Learning Resources Here!"></textarea><br />
 		<input class="btn" type="submit" value="Submit" />
 		</form>
+			-->
 
 	</div>
 

@@ -30,7 +30,7 @@ function grabSnippet($term)
 	{
 		if($element->class == "mw-content-ltr")
 			foreach($element->find('p') as $para)
-				return $para;
+				return strip_tags($para);
 	}
 
 }
