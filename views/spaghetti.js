@@ -78,8 +78,11 @@ $.post("views/ajax.php", {'arg' : topic},
 			});
 
 			// size of the diagram
-			var size = { width:$(containerName).outerWidth()/4 * 3, height: totalNodes * 50};
-
+			var size;
+			if(totalNodes < 5) 
+			 size = { width:totalNodes * 150, height: totalNodes * 150};
+			else 
+				size = { width:totalNodes * 55, height: totalNodes * 55};
 			var tree = d3.layout.tree()
 				.sort(null)
 				.size([size.height, size.width - maxLabelLength*options.fontSize])
@@ -130,6 +133,7 @@ $.post("views/ajax.php", {'arg' : topic},
 			nodeGroup.append("svg:text")
 				.attr("text-anchor", function(d)
 				{
+					if(totalNodes === 1) return "start";
 					return d.children ? "start" : "end";
 				})
 				.attr("dx", function(d)

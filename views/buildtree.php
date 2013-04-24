@@ -4,7 +4,7 @@
 		<style>
 		g.node {
 			font-family: Verdana, Helvetica;
-			font-size: 8px;
+			font-size: 12px;
 			font-weight: bold;
 		}
 		circle.node-dot {
