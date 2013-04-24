@@ -34,20 +34,20 @@ if(isset($data['results_obj']))
 	<div class="span7">
 		<br>
 
-			<h3>You are now learning the fine art of:<br> 
-	
-
-			<div id="display-btns">
-			<a href="#"><?php echo $topic; ?> <button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>		</h3>
-	
-			<i id =  ><i class='icon-star-empty'>
-			</i> Favorite</a></button>
-			</a>
-			<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button id = "visual-button" class="btn btn-fav pull-right" > 
-			<i  ><i class = 'icon-th'>
-			</i> Visualize</button></a>
+			<h3>You are now learning the fine art of:<br> <a href="#"><?php echo $topic; ?> 
+			
+			<div class="display-btns pull-right">
+			
+				<a href="index.php?buildtree&topic=<?php echo $topic;?>"><button id = "visual-button" class="btn btn-fav pull-right" > 
+				<i class = 'icon-th'>
+				</i> Visualize</button></a>
+				
+				<button class="btn btn-fav pull-right"><a  href = <?php echo 'index.php?displaySkill&topic='.rawurlencode($topic).'&fav=1'; ?>
+				<i id = "favorite-button" ><i class='icon-star'>
+				</i> Favorite</a></button>
 			</div>
-
+			
+			</a></h3>
 			
 			<div class="wiki-preview btn">		
 		<?php if(isset($data['topic']) && isset($data['snippet']))
@@ -55,7 +55,7 @@ if(isset($data['results_obj']))
 		?>
 				
 					
-			</div>
+		</div>
 		<!--<iframe src="http://en.wikipedia.org/wiki/Ashton_Kutcher"></iframe>-->
 		<?php
 			//"<iframe width='700' height='700' src='http://www.en.wikipedia.org/wiki/". $topic ."'></iframe>"
@@ -97,7 +97,7 @@ if(isset($data['results_obj']))
 			}
 				 else
 				  echo "<br><div class='alert alert-info'><strong>Wait! </strong>There are currently no prereqs. Add some!</div>";
-		  
+
 		?>
 		</br>
 
@@ -120,7 +120,7 @@ if(isset($data['results_obj']))
 			}
 		}
 			 else
-			  echo "<br><div class='alert alert-info'>There are currently no suggested skills.</div>";
+			  echo "<br><div class='alert alert-info'><strong>Wait! </strong>There are currently no prereqs. Add some!</div>";
 		?>
 
 		</br>
@@ -131,14 +131,7 @@ if(isset($data['results_obj']))
 		</form> 
 			
 		<div id="results"></div>	
-			<!--
-		<h5>Learning Resources</h5>
-		<form action="/html/codes/html-comment-box-code-action.cfm" method="get">
-
-		<textarea rows="4" cols="100"  placeholder="Share Learning Resources Here!"></textarea><br />
-		<input class="btn" type="submit" value="Submit" />
-		</form>
-			-->
+		
 
 	</div>
 
@@ -169,5 +162,3 @@ if(isset($data['results_obj']))
   		var topic = document.getElementById("topic").textContent;
 		console.log(topic);
 </script>
-
-

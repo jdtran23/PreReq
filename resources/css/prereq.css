@@ -57,3 +57,19 @@ label.error {
 {
 	margin-right: 4px;
 }
+
+.del-btn
+{
+	color: red;
+}
+
+.display-btns
+{
+	margin-bottom: 40px;
+	display:inline;
+}
+
+#visual-button
+{
+	margin-left:10px;
+}
